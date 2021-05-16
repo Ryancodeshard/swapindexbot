@@ -8,7 +8,7 @@
 Swap index bot for NTU telegram users to swap their course indexes
 @swapmyindexbot
 """
-from dotenv import dotenv_values
+import os
 from states import (
     start,
     myswaps,
@@ -33,7 +33,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-token = dotenv_values('.env')["TOKEN"]
+token = os.environ["TOKEN"]
 
 FIRST, SECOND, DELETING, NEWENTRY = range(4)
 

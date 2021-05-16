@@ -1,11 +1,11 @@
 from telegram import ReplyKeyboardMarkup, Update
 from telegram.ext import CallbackContext
 import requests
+import os
 
 from .findEntry import findEntry
 from .myswaps import myswaps
-from dotenv import dotenv_values
-website = dotenv_values('.env')["website"]
+website = os.environ["website"]
 
 FIRST, SECOND, DELETING, NEWENTRY = range(4)
 

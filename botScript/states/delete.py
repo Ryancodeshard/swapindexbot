@@ -2,8 +2,8 @@ from .myswaps import myswaps
 from telegram import ReplyKeyboardRemove, Update
 from telegram.ext import CallbackContext
 import requests
-from dotenv import dotenv_values
-website = dotenv_values('.env')["website"]
+import os
+website = os.environ["website"]
 FIRST, SECOND, DELETING, NEWENTRY = range(4)
 
 

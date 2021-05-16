@@ -1,9 +1,9 @@
 from telegram import Update
 from telegram.ext import CallbackContext
 import requests
-from dotenv import dotenv_values
-token = dotenv_values('.env')["TOKEN"]
-website = dotenv_values('.env')["website"]
+import os
+token = os.environ["TOKEN"]
+website = os.environ["website"]
 
 
 def findEntry(update: Update, context: CallbackContext, courseCode, currentIndex, wantIndex, chatId, sendnoti):
