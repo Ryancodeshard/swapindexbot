@@ -27,7 +27,7 @@ SECRET_KEY = '4c^p=s_cus)^=**z5$ddk5qt8t8*t)$c%#@5n6bg3wgvm3@!mv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["swapmyindex.herokuapp.com"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

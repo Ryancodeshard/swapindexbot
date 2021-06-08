@@ -17,7 +17,7 @@ def myswaps(update: Update, context: CallbackContext) -> int:
     msg += "The *bolded* ones are indexes that the person in the Username column is willing to swap with you\.\n"
     msg += "No\.\|Course code\|Current Index\|Want Index\|Username\n"
     response = requests.get(
-        f"{website}swapindex/?chatId={chatId}")
+            f"{website}swapindex/?chatId={chatId}")
     if response.status_code == 200:
         responseData = response.json()
         if not responseData:

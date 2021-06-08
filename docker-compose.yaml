@@ -1,0 +1,26 @@
+services: 
+    api:
+      image: swapindexapi
+      container_name: swapIndexAPI
+      build: ./Swapindexapi
+      # run this code for first build or if you down the volume
+      command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py shell && python manage.py runserver 0.0.0.0:8000"
+      # run this code only when you have built quantityai image before and you have persistent volume available
+      # command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+      ports:
+       - 8000:8000
+      depends_on: 
+          - bot
+    
+    bot:
+      image: swapindex-botscript
+      container_name: botScript
+      build: ./botScript
+      command: bash -c "python main.py"
+      env_file:
+       - ./botScript/.token.env
+      ports:
+       - 8001:8001
+
+    
+    
