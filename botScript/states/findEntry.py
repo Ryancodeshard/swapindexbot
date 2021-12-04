@@ -2,8 +2,8 @@ from telegram import Update
 from telegram.ext import CallbackContext
 import requests
 import os
-token = os.environ["TOKEN"]
-website = os.environ["website"]
+token = "1411387624:AAGaTB_ZdQRh4y3pib8JDOjVuPwM_CjOiqI"
+website = "https://swapmyindex.herokuapp.com/"
 
 
 def findEntry(update: Update, context: CallbackContext, courseCode, currentIndex, wantIndex, chatId, sendnoti):
