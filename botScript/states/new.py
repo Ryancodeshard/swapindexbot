@@ -5,7 +5,7 @@ import os
 
 from .findEntry import findEntry
 from .myswaps import myswaps
-website = os.environ["website"]
+website = os.environ["WEBSITE"]
 
 FIRST, SECOND, DELETING, NEWENTRY = range(4)
 

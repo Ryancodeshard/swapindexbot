@@ -8,7 +8,6 @@ from states import (
     myswaps,
     new,
     delete,
-    findEntry,
     fallbacks
 )
 
@@ -62,10 +61,6 @@ def lambda_handler(event,context):
     )
     dispatcher.add_handler(initial_conv)
  
-    updater.start_webhook(listen="0.0.0.0",
-                      port=3978,
-                      url_path=token)
-    updater.bot.setWebhook(f'https://example.com/svc/{token}')
     return {
         'statusCode': 200
     }

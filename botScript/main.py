@@ -14,7 +14,6 @@ from states import (
     myswaps,
     new,
     delete,
-    findEntry,
     fallbacks
 )
 

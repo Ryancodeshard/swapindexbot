@@ -3,7 +3,7 @@ from telegram import ReplyKeyboardRemove, Update
 from telegram.ext import CallbackContext
 import requests
 import os
-website = os.environ["website"]
+website = os.environ["WEBSITE"]
 FIRST, SECOND, DELETING, NEWENTRY = range(4)
 
 
