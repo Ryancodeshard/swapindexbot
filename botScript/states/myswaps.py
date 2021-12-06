@@ -4,8 +4,8 @@ import requests
 import os
 from .findEntry import findEntry
 
-website = os.environ["website"]
-
+website = os.environ["WEBSITE"]
+token = os.environ["TOKEN"]
 
 FIRST, SECOND, DELETING, NEWENTRY = range(4)
 
@@ -42,4 +42,8 @@ def myswaps(update: Update, context: CallbackContext) -> int:
     msg += "\nClick *Delete* to delete an entry or *Back* to go back to main menu\."
     update.message.reply_text(msg, parse_mode='MarkdownV2', reply_markup=ReplyKeyboardMarkup(
         myswaps_keyboard, one_time_keyboard=True),)
+    
+    # requests.post(
+    #             f"https://api.telegram.org/bot{token}/sendMessage",headers={"Content-Type":"applications/json"},
+    #             data={"chat_id":chatId,"text":msg,"reply_markup":{"ReplyKeyboardMarkup":{"keyboard":[["Delete","Back"]],"one_time_keyboard"},})
     return SECOND

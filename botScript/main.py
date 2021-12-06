@@ -67,8 +67,13 @@ def main() -> None:
                    CommandHandler("about", fallbacks.about)],
     )
     dispatcher.add_handler(initial_conv)
+ 
+    # updater.start_webhook(listen="0.0.0.0",
+    #                   port=3978,
+    #                   url_path=token)
+    # updater.bot.setWebhook(f'https://example.com/svc/{token}')
 
-    # Start the Bot
+    # # Start the Bot
     updater.start_polling()
 
     # Run the bot until you press Ctrl-C or the process receives SIGINT,
